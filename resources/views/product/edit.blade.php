@@ -12,9 +12,14 @@
           <form action="{{ route('product.update', $product) }}" method="POST" enctype="multipart/form-data">
             @csrf
             @method('PUT')
-            <div class="mb-3">
+            <div class="mb-3 flex justify-between">
               <h1 class="text-2xl">Edit produk</h1>
+
+              <img class="w-48 rounded" src="{{ asset($product->image) }}" alt="">
             </div>
+
+            
+
             <div>
               <x-label for="name" :value="__('Nama Produk')" />
               <x-input id="name" class="block mt-1 w-full" type="text" name="name" :value="old('name', $product->name)" :error="$errors->first('name')" required autofocus />

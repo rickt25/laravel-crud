@@ -50,7 +50,7 @@ class ProductController extends Controller
         ]);
 
         if($request->hasFile('image')){
-            $data['image'] = $request->file('image')->store('public/product');
+            $data['image'] = $request->file('image')->store('product', 'public');
         }
 
         Product::create($data);
@@ -101,7 +101,7 @@ class ProductController extends Controller
 
         if($request->hasFile('image')){
             Storage::delete($product->image);
-            $data['image'] = $request->file('image')->store('public/product');
+            $data['image'] = $request->file('image')->store('product', 'public');
         }
 
         $product->update($data);
