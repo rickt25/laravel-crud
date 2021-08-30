@@ -2,11 +2,11 @@
   <x-slot name="header">
       <div class="flex justify-between items-center">
         <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-          {{ __('Products') }}
+          {{ __('Categories') }}
         </h2>
 
-        <a href="{{ route('product.create') }}">
-          <x-button type="button" class="py-2">Tambah Produk</x-button>
+        <a href="{{ route('category.create') }}">
+          <x-button type="button" class="py-2">Tambah Kategori</x-button>
         </a>
       </div>
   </x-slot>
@@ -24,20 +24,19 @@
                       <tr class="text-left bg-gray-100 border-b-2 border-gray-300">
                         <th class="px-4 py-3">No</th>
                         <th class="px-4 py-3">Name</th>
-                        <th class="px-4 py-3">Category</th>
                         <th class="px-4 py-3">Action</th>
                       </tr>
                     </x-slot>
 
                     <!-- Content -->
-                    @forelse($products as $product)
-                      @include('product.items', ['product' => $product])
+                    @forelse($categories as $category)
+                      @include('category.items', ['category' => $category])
                     @empty
-                      @include('product.empty')
+                      @include('category.empty')
                     @endforelse
                   </x-table>
 
-                  {{ $products->links() }}
+                  {{ $categories->links() }}
               </div>
           </div>
       </div>

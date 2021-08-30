@@ -16,15 +16,15 @@
             </div>
             <div>
               <x-label for="name" :value="__('Nama Produk')" />
-              <x-input id="name" class="block mt-1 w-full" type="text" name="name" :value="old('name')" :error="$errors->first('name')" required autofocus />
+              <x-input id="name" class="block mt-1 w-full" type="text" name="name" :value="old('name')" :error="$errors->first('name')" autofocus />
             </div>
 
             <div class="mt-4">
               <x-label for="category" :value="__('Kategori Produk')" />
-              <x-select name="category_id" id="category" :error="$errors->first('category_id')">
+              <x-select name="category_id" id="category" class="w-full" :error="$errors->first('category_id')">
                 <option value="" selected disabled>-- Pilih Kategori --</option>
                 @foreach ($categories as $category)
-                  <option value="{{ $category->id }}">{{ $category->name }}</option>
+                  <option value="{{ $category->id }}" @if($category->id == old('category_id')) selected @endif>{{ $category->name }}</option>
                 @endforeach
               </x-select>
             </div>

@@ -1,4 +1,4 @@
-<table class="w-full rounded mx-auto m-2 bg-blue-400">
+<table class="w-full rounded mx-auto m-2 bg-grey-200">
   <thead>
     {{ $head }}
   </thead>
