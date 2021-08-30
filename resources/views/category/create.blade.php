@@ -1,10 +1,12 @@
-<x-app-layout>
-  <x-slot name="header">
-      <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-          {{ __('Add Category') }}
-      </h2>
-  </x-slot>
+@extends('layouts.app')
 
+@section('header')
+  <h2 class="font-semibold text-xl text-gray-800 leading-tight">
+      {{ __('Add Categories') }}
+  </h2>
+@endsection
+
+@section('content')
   <div class="py-12">
     <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
       <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
@@ -15,8 +17,11 @@
               <h1 class="text-2xl">Tambah kategori</h1>
             </div>
             <div>
-              <x-label for="name" :value="__('Nama Kategori')" />
-              <x-input id="name" class="block mt-1 w-full" type="text" name="name" :value="old('name')" :error="$errors->first('name')" autofocus />
+              <label for="name">{{  __('Nama Kategori')  }}</label>
+              <input type="text" name="name" value="{{ old('name') }}" id="name" class="block mt-1 w-full rounded-md shadow-sm border-gray-300 focus:ring focus:ring-opacity-50 focus:border-indigo-300 focus:ring-indigo-200 @error('name') border-red-400 @enderror" autofocus />
+              @error('name')
+                <small class="mt-2 text-red-500 text-xs italic">{{ $message }}</small>
+              @enderror
             </div>
 
             <button type="submit" class="w-full mt-4 rounded px-4 py-2 bg-blue-500 text-white hover:bg-blue-600">Tambah Kategori</button>
@@ -24,6 +29,5 @@
         </div>
       </div>
     </div>
-  </div>
-
-</x-app-layout>
+  </div> 
+@endsection
