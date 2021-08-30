@@ -35,7 +35,7 @@
               <x-input-file id="image" name="image" :error="$errors->first('image')" />
             </div>
 
-            <button type="submit" class="w-full mt-4 rounded px-4 py-2 bg-blue-500 text-white hover:bg-blue-600">Edit Produk</button>
+            <x-button type="submit" class="mt-4 mx-0 py-2 w-full">Tambah Kategori</x-button>
           </form>
         </div>
       </div>
