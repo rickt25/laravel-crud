@@ -10,7 +10,7 @@
 ## About this repository
 This is a CRUD Operation with Has Many relationship.
 I implemented 2 types of templating in Blade which is
-- Blade component (NEW) where we use <x-something> in our blade
+- Blade component (NEW) where we use ```<x-something />``` in our blade
 - Blade directives, the traditional way where we use @extends() and @include()
     
 For Laravel users i really recommend trying the new Blade Component, ^_^ , it's quite fun to use.
